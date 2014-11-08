@@ -1,0 +1,70 @@
+<head>
+  <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+</head>
+
+<template name="layout">
+  {{#HeaderFooterLayout headerSize="45" footerSize="0"}}
+
+    {{#Surface target="header" translate="[0,0,100]"}}
+    	{{> header}}
+    {{/Surface}}
+
+    {{!-- you can also set transition: slideWindowLeft, etc --}}
+    {{#RenderController target="content" transition="opacity"}}
+    	{{>yield}}
+    {{/RenderController}}
+
+  {{/HeaderFooterLayout}}	
+</template>
+
+<template name="header">
+  <div id="header">
+  	<a id="brand" href="/">fview-quickstart</a>
+    <a href="/">Home</a>
+    <a href="/page2">Page 2</a>
+  </div>
+</template>
+
+<template name="home">
+  {{#Surface class="page"}}
+    <h1>famous-views Quick Start</h1>
+
+    <p>Thanks for joining us!  Your project is ready for editing.</p>
+
+    <p>A few more things to help you on your way:</p>
+
+    <ul>
+      <li>
+        <p>
+          For <b>Jade</b>: <code>meteor add mquandalle:jade</code> and delete
+          <code>client/app.html</code>.  There is a <code>client/app.jade</code>
+          ready and waiting for you.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <b>CoffeeScript</b>: <code>meteor add coffeescript</code> and
+          delete <code>lib/routing.js</code>.  There is a
+          <code>lib/routing.coffee</code> ready and waiting for you.
+        </p>
+      </li>
+    </ul>
+
+    <p>Make sure to check out the rest of
+    <a href="http://famous-views.meteor.com">famous-views.meteor.com</a>
+    to be aware of all your options, help for animations, etc.</p>
+
+    <a href="/page2">Example Page 2</a>
+  {{/Surface}}
+</template>
+
+<template name="page2">
+  {{#Surface class="page"}}
+    <h1>Welcome to Page 2</h1>
+
+    <p>Change your transition type on the <code>#Rendercontroller</code>
+    in your layout template.</p>
+
+    <a href="/">Back to Home</a>
+  {{/Surface}}
+</template>

@@ -1,0 +1,32 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* background: #f5f5f5; */
+}
+
+#header {
+	background: #222;
+	line-height: 45px;
+}
+
+#header > #brand {
+	font-size: 120%;
+	color: white;
+	margin-left: 40px;
+	margin-right: 10px;
+}
+
+#header > a {
+	color: #777;
+	text-decoration: none;
+	margin-left: 20px;
+	font-size: 90%;
+}
+
+#header > a:hover {
+	color: #fff;
+}
+
+.page {
+	padding-left: 20px;
+	padding-right: 20px;
+}
